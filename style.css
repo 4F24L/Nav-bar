@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    height: 100Vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden{
+    position: absolute;
+    visibility: hidden;
+}
+
+.nav{
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 1px rgb(183, 183, 183);
+    display: flex;
+    position: relative;
+    height: 60px;
+    width:80%;
+    max-width: 600px;
+    /* gap: 5px; */
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-items{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    color: rgb(10, 145, 145);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 60px;
+    margin: 0 4px;
+
+    text-align: center;
+    
+}
+
+label{
+    z-index: 1;
+}
+
+.slider{
+    position: absolute;
+    background-color: rgb(10, 145, 145);
+    height: 100%;
+    width: 20%;
+    border-radius: 10%;
+    left: 0;
+    top: 0;
+    transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transform-origin: left;
+}
+
+
+#home:checked ~ .nav .slider{
+    left: 0;
+}
+ 
+#skill:checked ~ .nav .slider{
+    left: 20%;
+}
+
+#projects:checked ~ .nav .slider{
+    left: 40%;
+}
+
+#contact:checked ~ .nav .slider{
+    left: 60%;
+}
+
+#about:checked ~ .nav .slider{
+    left: 80%;
+}
+
+#home:checked ~ nav .home,
+#skill:checked ~ nav label.skill,
+#projects:checked ~ nav .projects,
+#contact:checked ~ nav .contact,
+#about:checked ~ nav .about{
+    color: white;
+    z-index: 3;
+}
+
+label:hover{
+    background-color: rgb(10, 145, 145, 0.25);
+}
